@@ -19,12 +19,22 @@ function adicionarAmigo() {
     let nomeAmigo = document.getElementById('amigo').value;
     if (nomeAmigo != '') {
             listaDeAmigos.push(nomeAmigo);
-            let listaNoHTML = document.getElementById('listaAmigos');
-            listaNoHTML.textContent = listaDeAmigos.join(', ');
+            atualizarLista();
             document.getElementById('amigo').value = '';
             exibirTextoNaTela('h2', 'Digite o nome dos seus amigos');
     } else {
         exibirTextoNaTela('h2', 'Digite um nome válido!');
+    }
+}
+
+function atualizarLista() {
+    let elementoLista = document.getElementById('listaAmigos');
+
+    elementoLista.innerHTML = '';
+    for (let i = 0; i < listaDeAmigos.length; i++) {
+        let item = document.createElement('li');
+        item.textContent = listaDeAmigos[i];
+        elementoLista.appendChild(item);
     }
 }
 
