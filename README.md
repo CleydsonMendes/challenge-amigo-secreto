@@ -4,7 +4,7 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 <p align="center">
-  <img src="[URL_PARA_SEU_GIF_OU_IMAGEM_DE_DEMONSTRAÇÃO]" alt="Demonstração do Projeto Amigo Secreto" width="700">
+  <img src="https://github.com/CleydsonMendes/challenge-amigo-secreto/blob/main/assets/amigo-secreto.png" alt="Demonstração do Projeto Amigo Secreto" width="700">
 </p>
 
 ---
