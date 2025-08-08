@@ -1,6 +1,7 @@
 //O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. 
 // Aqui você deverá desenvolver a lógica para resolver o problema.
 let listaDeAmigos = [];
+let numeroLimite = 3;
 
 // Passo 2 do backlog: Função para adicionar
 function adicionarAmigo() {
@@ -21,4 +22,12 @@ function adicionarAmigo() {
     // 4. Limpar o campo de input.
     // Dica: Como você define o valor do input de volta para uma string vazia?
     document.getElementById('amigo').value = '';
+}
+
+function sortearAmigo() {
+    let totalDeAmigos = listaDeAmigos.length;
+    let indiceSorteado = Math.floor(Math.random() * totalDeAmigos);
+    let amigoSecreto = listaDeAmigos[indiceSorteado];
+    let elementoResultado = document.getElementById('resultado');
+    elementoResultado.textContent = 'O amigo secreto é: ' + amigoSecreto;
 }
