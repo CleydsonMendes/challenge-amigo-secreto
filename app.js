@@ -8,12 +8,7 @@ function exibirTextoNaTela(tag, texto) {
     responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
 }
 
-function exibirMensagemTela() {
-    exibirTextoNaTela('h2', 'Digite o nome dos seus amigos');
-    exibirTextoNaTela('h2', 'Digite um nome válido!');
-}
-
-exibirMensagemTela();
+exibirTextoNaTela('h2', 'Digite o nome dos seus amigos');
 
 function adicionarAmigo() {
     let nomeAmigo = document.getElementById('amigo').value;
@@ -40,8 +35,13 @@ function atualizarLista() {
 
 function sortearAmigo() {
     let totalDeAmigos = listaDeAmigos.length;
-    let indiceSorteado = Math.floor(Math.random() * totalDeAmigos);
-    let amigoSecreto = listaDeAmigos[indiceSorteado];
-    let elementoResultado = document.getElementById('resultado');
-    elementoResultado.textContent = 'O amigo secreto é: ' + amigoSecreto;
+    if(totalDeAmigos < 2) {
+        exibirTextoNaTela('h2', 'Número insuficiente de participantes!');
+        return adicionarAmigo();
+    } else {
+        let indiceSorteado = Math.floor(Math.random() * totalDeAmigos);
+        let amigoSecreto = listaDeAmigos[indiceSorteado];
+        let elementoResultado = document.getElementById('resultado');
+        elementoResultado.textContent = 'O amigo secreto é: ' + amigoSecreto;
+    }
 }
